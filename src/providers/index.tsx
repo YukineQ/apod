@@ -18,7 +18,7 @@ const ErrorFallback = () => {
                 variant='rounded'
                 onClick={() => window.location.assign(window.location.href)}
             >
-                <Icons.arrowLeft className="h-10 w-10" />
+                <Icons.reload className="h-8 w-8" />
             </IconButton>
         </div>
     )
