@@ -1,10 +1,10 @@
-import { DateSelection } from "@/components/calendar/date-range-picker";
 import {
     CALENDAR_MONTHS,
     CALENDAR_WEEKS,
     THIS_MONTH,
     THIS_YEAR
 } from "@/constants/date";
+import { DateSelection } from "@/features/calendar";
 
 export type DateState = {
     month: number;
