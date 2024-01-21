@@ -38,7 +38,7 @@ export const ApodCarousel = ({
     if (!apods && isFetched) {
         return (
             <h2 className='text-2xl text-white/80 text-center font-medium'>
-                It's seems like no data yet for this day
+                It`s seems like no data yet for this day
             </h2>
         )
     }
