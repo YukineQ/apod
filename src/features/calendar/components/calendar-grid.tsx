@@ -19,6 +19,8 @@ export const CalendarGrid = ({
     startDate,
     endDate,
 }: CalendarGridProps) => {
+    console.log('rerender')
+
     return (
         <div className="grid grid-cols-7">
             {datesArray.map((date, _) => (

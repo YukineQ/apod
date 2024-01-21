@@ -5,7 +5,7 @@ import Image from "next/image"
 import { twMerge } from 'tailwind-merge'
 import ReactPlayer from 'react-player'
 
-export const ApodResourse = ({
+export const ApodResourse = React.memo(({
     apod
 }: {
     apod: Apod
@@ -55,4 +55,4 @@ export const ApodResourse = ({
             )}
         </div>
     )
-}
+})
