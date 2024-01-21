@@ -1,3 +1,5 @@
+import React from "react";
+
 import { formatDate } from "@/utils/format";
 import { CalendarDay } from "./calendar-day"
 import { DateSelection } from "./date-range-picker";
@@ -19,7 +21,6 @@ export const CalendarGrid = ({
     startDate,
     endDate,
 }: CalendarGridProps) => {
-    console.log('rerender')
 
     return (
         <div className="grid grid-cols-7">

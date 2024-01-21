@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ApodResourse } from './apod-resourse'
+import { ApodResourse, ResourseSkeleton } from './apod-resourse'
 import { useAPOD } from '../api/get-apod'
 import {
     Carousel,
@@ -10,6 +10,7 @@ import {
     CarouselNext,
     CarouselPrevious
 } from '@/components/carousel'
+import { Skeleton } from '@/components/skeleton'
 
 type ApodCarouselProps = {
     query: Partial<ApodQueryParams>;
@@ -18,7 +19,7 @@ type ApodCarouselProps = {
 export const ApodCarousel = ({
     query,
 }: ApodCarouselProps) => {
-    const { data: apods, isLoading } = useAPOD(query)
+    const { data: apods } = useAPOD(query)
     const [api, setApi] = React.useState<CarouselApi>()
     const [currentApod, setCurrentApod] = React.useState(0)
 
@@ -34,8 +35,6 @@ export const ApodCarousel = ({
         })
     })
 
-    if (isLoading) return 'Loading...'
-
     return apods && (
         <>
             <Carousel
@@ -49,8 +48,8 @@ export const ApodCarousel = ({
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselNext />
-                <CarouselPrevious />
+                <CarouselNext className='hidden md:flex'/>
+                <CarouselPrevious className='hidden md:flex'/>
             </Carousel>
             <div className='grid col-span-full'>
                 <div className='flex flex-col flex-1 w-full'>
@@ -89,6 +88,20 @@ export const ApodCarousel = ({
                     >
                         {apods[currentApod]?.date}
                     </p>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export const ApodCarouselSkeleton = () => {
+    return (
+        <>
+            <ResourseSkeleton />
+            <div className='grid col-span-full'>
+                <div className='flex flex-col flex-1 w-full justify-center items-center pt-4 gap-4'>
+                    <Skeleton className='md:w-80 w-full h-8' />
+                    <Skeleton className='w-full py-4 md:h-36 h-60' />
                 </div>
             </div>
         </>

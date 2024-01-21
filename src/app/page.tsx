@@ -1,10 +1,11 @@
 import React from 'react'
 
 import { Apod } from '@/features/apod'
+import { PageContainer } from '@/components/page-container'
 
 export default function Home() {
     return (
-        <div className="w-full h-full flex">
+        <PageContainer>
             <div className="flex items-center justify-center flex-col w-full gap-10">
                 <h1
                     className="
@@ -12,13 +13,12 @@ export default function Home() {
                         text-white/80 
                         font-semibold 
                         tracking-tight 
-                        mt-20
                     "
                 >
                     Astronomy Picture of the Day
                 </h1>
                 <Apod />
             </div>
-        </div>
+        </PageContainer>
     )
 }

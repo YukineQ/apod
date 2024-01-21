@@ -4,6 +4,8 @@ import React from 'react'
 import Image from "next/image"
 import { twMerge } from 'tailwind-merge'
 import ReactPlayer from 'react-player'
+import { Skeleton } from '@/components/skeleton'
+import { Spinner } from '@/components/spinner'
 
 export const ApodResourse = React.memo(({
     apod
@@ -38,12 +40,21 @@ export const ApodResourse = React.memo(({
             onReady={() => setIsLoading(false)}
         />
     )
+    //TODO: global state
+    const EmptyState = () => {
+        setIsLoading(false)
+        return (
+            <h4 className='text-white/80 font-lg font-medium text-center'>
+                No resourse
+            </h4>
+        )
+    }
 
     const getResourse = () => {
         switch (apod.media_type) {
             case 'image': return <ApodImage />;
             case 'video': return <ApodVideo />;
-            default: return null;
+            default: return <EmptyState />;
         }
     }
 
@@ -51,8 +62,17 @@ export const ApodResourse = React.memo(({
         <div className="h-full w-full relative rounded-md overflow-hidden transition-opacity">
             {getResourse()}
             {isLoading && (
-                <div className='w-full h-full bg-black/20 animate-pulse transition-none' />
+                <div className='w-full h-full black/20 flex items-center justify-center'>
+                    <Spinner size='md' />
+                </div>
             )}
         </div>
     )
 })
+ApodResourse.displayName = 'Resourse'
+
+export const ResourseSkeleton = () => {
+    return (
+        <Skeleton className='w-full h-[268px]' />
+    )
+}

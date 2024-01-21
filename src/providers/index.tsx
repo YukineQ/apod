@@ -16,6 +16,7 @@ const ErrorFallback = () => {
             </h1>
             <IconButton
                 variant='rounded'
+                className='p-2'
                 onClick={() => window.location.assign(window.location.href)}
             >
                 <Icons.reload className="h-8 w-8" />

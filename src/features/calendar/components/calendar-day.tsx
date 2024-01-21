@@ -33,7 +33,7 @@ function useCalendarDay({
     const isToday = isTodayFn(date)
 
     const onClick = () => {
-        if(!isRangeAvailable) return
+        if (!isRangeAvailable) return
         onChange(date)
     }
 
@@ -77,7 +77,8 @@ export const CalendarDay = ({
                 text-xs 
                 bg-[#262729] 
                 text-white/70 
-                transition-colors
+                transition
+                hover:opacity-70
             `,
                 isNotCurrentMonth && 'bg-transparent shadow-none text-white/60',
                 isDateSelected && 'bg-green-500 text-white',

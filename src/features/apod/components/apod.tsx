@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-import { ApodCarousel } from './apod-carousel'
+import { ApodCarousel, ApodCarouselSkeleton } from './apod-carousel'
 import { formatDate } from '@/utils/format'
 import { ApodFilter } from './apod-filter'
 import { DateSelection } from '@/features/calendar'
@@ -19,12 +19,14 @@ export const Apod = () => {
                 <div className='flex items-center lg:justify-start justify-center'>
                     <ApodFilter state={state} setState={setState} />
                 </div>
-                <ApodCarousel
-                    query={{
-                        start_date: formatDate(state.startDate),
-                        end_date: formatDate(state.endDate!)
-                    }}
-                />
+                <React.Suspense fallback={<ApodCarouselSkeleton />}>
+                    <ApodCarousel
+                        query={{
+                            start_date: formatDate(state.startDate),
+                            end_date: formatDate(state.endDate!)
+                        }}
+                    />
+                </React.Suspense>
             </div>
         </div>
     )
