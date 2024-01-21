@@ -67,7 +67,7 @@ export const ApodCarousel = ({
                     </h3>
                     <p
                         className='
-                                text-xs
+                                text-md
                                 md:text-sm
                                 font-light 
                                 text-white/50 
