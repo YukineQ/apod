@@ -62,7 +62,7 @@ export const ApodResourse = React.memo(({
         <div className="h-full w-full relative rounded-md overflow-hidden transition-opacity">
             {getResourse()}
             {isLoading && (
-                <div className='w-full h-full black/20 flex items-center justify-center'>
+                <div className='w-full h-full bg-black/20 flex items-center justify-center'>
                     <Spinner size='md' />
                 </div>
             )}
