@@ -19,7 +19,7 @@ type ApodCarouselProps = {
 export const ApodCarousel = ({
     query,
 }: ApodCarouselProps) => {
-    const { data: apods, isFetched } = useAPOD(query)
+    const { data: apods, isLoading } = useAPOD(query)
     const [api, setApi] = React.useState<CarouselApi>()
     const [currentApod, setCurrentApod] = React.useState(0)
 
@@ -34,8 +34,7 @@ export const ApodCarousel = ({
             setCurrentApod(api.selectedScrollSnap())
         })
     })
-
-    if (!apods && isFetched) {
+    if (!apods && !isLoading) {
         return (
             <h2 className='text-2xl text-white/80 text-center font-medium'>
                 It`s seems like no data yet for this day
