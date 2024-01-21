@@ -6,7 +6,7 @@ const URL = `${NASA_API}/planetary/apod`
 
 export const getAPOD = async (
     queryParams: Partial<ApodQueryParams>
-): Promise<Apod[]> => {
+): Promise<Apod[] | null> => {
     const key = process.env.NASA_API_KEY
     if (!key) throw new Error('NASA_API_KEY must be defined.')
 
@@ -17,6 +17,10 @@ export const getAPOD = async (
 
     const query = objectToParamsQuery({ api_key, ...rest })
     const res = await fetch(`${URL}?${query}`)
+
+    if (!res.ok) {
+        return null
+    }
 
     return res.json()
 }
