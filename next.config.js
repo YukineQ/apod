@@ -5,7 +5,8 @@ const nextConfig = {
     },
     env: {
         NASA_API_KEY: process.env.NASA_API_KEY
-    }
+    },
+    output: 'export'  
 }
 
 module.exports = nextConfig
