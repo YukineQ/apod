@@ -9,8 +9,8 @@ import { DateSelection } from '@/features/calendar'
 
 export const Apod = () => {
     const [state, setState] = React.useState<DateSelection>({
-        startDate: new Date(new Date().toLocaleString('en-Us', {timeZone: 'America/New_York'})),
-        endDate: new Date(new Date().toLocaleString('en-Us', {timeZone: 'America/New_York'})),
+        startDate: new Date(),
+        endDate: new Date(),
     })
 
     return (
