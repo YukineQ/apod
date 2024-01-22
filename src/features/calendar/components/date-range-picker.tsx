@@ -3,7 +3,7 @@
 import React from 'react'
 
 import { Calendar } from './calendar';
-import { getDefaultEndDate, getDefaultStartDate, isDatesEqual } from '@/utils/date';
+import { getDefaultEndDate, getDefaultStartDate, isDatesEqual } from '@/features/calendar/utils/date';
 
 type UseDateRangePickerOptions = Pick<DateRangePicker, 'startRange' | 'endRange' | 'onChange'>
 

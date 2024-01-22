@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge'
 import {
     isInRange,
     isToday as isTodayFn,
-} from "@/utils/date";
+} from "@/features/calendar/utils/date";
 import { DateSelection } from './date-range-picker';
 
 type CalendarDayProps = {

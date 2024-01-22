@@ -34,6 +34,7 @@ export const ApodCarousel = ({
             setCurrentApod(api.selectedScrollSnap())
         })
     })
+    
     if (!apods && !isLoading) {
         return (
             <h2 className='text-2xl text-white/80 text-center font-medium'>

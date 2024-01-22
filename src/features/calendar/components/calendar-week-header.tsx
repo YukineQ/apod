@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { WEEK_DAYS } from '@/constants/date'
+import { WEEK_DAYS } from '@/features/calendar/constants/date'
 
 type CalendarWeekHeaderProps = {
     isSundayFisrt: boolean;

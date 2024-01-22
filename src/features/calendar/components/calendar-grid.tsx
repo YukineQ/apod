@@ -1,6 +1,6 @@
 import React from "react";
 
-import { formatDate } from "@/utils/format";
+import { formatDate } from "@/features/calendar/utils/format";
 import { CalendarDay } from "./calendar-day"
 import { DateSelection } from "./date-range-picker";
 

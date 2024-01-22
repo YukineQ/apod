@@ -3,7 +3,7 @@ import {
     CALENDAR_WEEKS,
     THIS_MONTH,
     THIS_YEAR
-} from "@/constants/date";
+} from "@/features/calendar/constants/date";
 import { DateSelection } from "@/features/calendar";
 
 export type DateState = {

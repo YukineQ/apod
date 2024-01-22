@@ -8,7 +8,7 @@ import {
     extractDateState,
     formatDateState,
     getCalendarData
-} from '@/utils/calendar'
+} from '@/features/calendar/utils/calendar'
 
 type UseCalendarNavigation = {
     date: DateSelection;
