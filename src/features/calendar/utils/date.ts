@@ -14,7 +14,9 @@ export const isDatesEqual = (
 export const isInRange = (date: Date, startDate: Date, endDate?: Date | null) => {
     if (!endDate) return isDatesEqual(startDate, date)
 
-    return date >= startDate && date <= endDate
+    const dateWithoutTime = new Date(date.toDateString())
+
+    return dateWithoutTime >= startDate && dateWithoutTime <= endDate
 }
 
 export const getDefaultStartDate = () => {
