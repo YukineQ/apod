@@ -12,7 +12,7 @@ export const Apod = () => {
         startDate: new Date(),
         endDate: new Date(),
     })
-
+    console.log('state', state)
     return (
         <div className='max-w-4xl mx-auto w-full h-full'>
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-10">
