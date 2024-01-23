@@ -60,7 +60,7 @@ export const CalendarDay = ({
         isToday,
         handlers: { onClick }
     } = useCalendarDay({ date, ...props })
-    console.log('reange', isRangeAvailable && date)
+    console.log('reange', isRangeAvailable && date, title)
     console.log(isToday && date)
     return (
         <button
