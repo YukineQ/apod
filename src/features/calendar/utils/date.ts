@@ -15,6 +15,7 @@ export const isInRange = (date: Date, startDate: Date, endDate?: Date | null) =>
     if (!endDate) return isDatesEqual(startDate, date)
 
     const dateWithoutTime = new Date(date.toDateString())
+    console.log('compare', dateWithoutTime >= startDate && dateWithoutTime <= endDate)
 
     return dateWithoutTime >= startDate && dateWithoutTime <= endDate
 }
