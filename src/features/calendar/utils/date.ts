@@ -33,6 +33,7 @@ export const getDefaultEndDate = () => {
 
 export const isToday = (date: Date) => {
     const today = new Date()
+    console.log('today', today)
     return isDatesEqual(date, today)
 }
 
